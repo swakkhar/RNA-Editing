@@ -8,3 +8,4 @@ Using Incremental Decision Tree"
 3. Independent Test Set.csv - Independent Test Set with selected features
 4. Benchmark Dataset.txt - Benchmark Dataset
 5. Independent Test Set.txt - Independent Test Set
+6. NegativeDataset.txt - Generated Negative Strings
