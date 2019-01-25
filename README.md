@@ -1,6 +1,5 @@
 # RNA-Editing
-This repository contains datasets for the paper titled "Prediction of Adenosine to Inosine RNA Editing Sites
-Using Incremental Decision Tree"
+This repository contains datasets for the paper titled "Incremental Decision Trees for Prediction of Adenosine to Inosine RNA Editing Sites"
 
 ## List of files
 1. All Features.csv - Benchmark Dataset After Feature Extraction
