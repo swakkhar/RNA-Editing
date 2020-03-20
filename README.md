@@ -1,4 +1,6 @@
 # RNA-Editing
+[![DOI](https://zenodo.org/badge/146388476.svg)](https://zenodo.org/badge/latestdoi/146388476)
+
 This repository contains datasets for the paper titled "Incremental Decision Trees for Prediction of Adenosine to Inosine RNA Editing Sites"
 
 ## List of files
