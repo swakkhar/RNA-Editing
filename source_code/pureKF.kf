@@ -1,0 +1,675 @@
+{
+	"flow_name" : "pureKF",
+	"steps" : [
+		{
+			"class" : "weka.knowledgeflow.steps.Loader",
+			"properties" : {
+				"loader" : {
+					"type" : "loader",
+					"class" : "weka.core.converters.CSVLoader",
+					"filePath" : "C:/Users/HiddenDimension/Desktop/ass2/history of universe/gen 1/dataset2.csv",
+					"useRelativePath" : false,
+					"options" : "-format \"yyyy-MM-dd\\'T\\'HH:mm:ss\" -M ? -B 100 -E \"\\\",\\'\" -F ,"
+				},
+				"name" : "CSVLoader"
+			},
+			"connections" : {
+				"dataSet" : [
+					"ClassAssigner"
+				]
+			},
+			"coordinates" : "82,64"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ClassAssigner",
+			"properties" : {
+				"classColumn" : "Adenosine",
+				"name" : "ClassAssigner"
+			},
+			"connections" : {
+				"dataSet" : [
+					"ClassValuePicker"
+				]
+			},
+			"coordinates" : "244,64"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ClassValuePicker",
+			"properties" : {
+				"classValue" : "/first",
+				"name" : "ClassValuePicker"
+			},
+			"connections" : {
+				"dataSet" : [
+					"CrossValidationFoldMaker"
+				]
+			},
+			"coordinates" : "390,67"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.CrossValidationFoldMaker",
+			"properties" : {
+				"name" : "CrossValidationFoldMaker",
+				"numFolds" : "10",
+				"preserveOrder" : false,
+				"seed" : "1"
+			},
+			"connections" : {
+				"trainingSet" : [
+					"NaiveBayes",
+					"HoeffdingTree",
+					"RandomForest",
+					"SMO",
+					"AdaBoostM1",
+					"Bagging"
+				],
+				"testSet" : [
+					"NaiveBayes",
+					"HoeffdingTree",
+					"RandomForest",
+					"SMO",
+					"AdaBoostM1",
+					"Bagging"
+				]
+			},
+			"coordinates" : "537,107"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Classifier",
+			"properties" : {
+				"classifier" : {
+					"type" : "optionHandler",
+					"class" : "weka.classifiers.bayes.NaiveBayes",
+					"options" : ""
+				},
+				"loadClassifierFileName" : "",
+				"name" : "NaiveBayes",
+				"resetIncrementalClassifier" : false,
+				"updateIncrementalClassifier" : true
+			},
+			"connections" : {
+				"batchClassifier" : [
+					"ClassifierPerformanceEvaluator2",
+					"SerializedModelSaver"
+				]
+			},
+			"coordinates" : "700,5"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Classifier",
+			"properties" : {
+				"classifier" : {
+					"type" : "optionHandler",
+					"class" : "weka.classifiers.trees.HoeffdingTree",
+					"options" : "-L 2 -S 1 -E 1.0E-7 -H 0.05 -M 0.01 -G 200.0 -N 0.0"
+				},
+				"loadClassifierFileName" : "",
+				"name" : "HoeffdingTree",
+				"resetIncrementalClassifier" : false,
+				"updateIncrementalClassifier" : true
+			},
+			"connections" : {
+				"batchClassifier" : [
+					"ClassifierPerformanceEvaluator",
+					"SerializedModelSaver2"
+				]
+			},
+			"coordinates" : "697,122"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Classifier",
+			"properties" : {
+				"classifier" : {
+					"type" : "optionHandler",
+					"class" : "weka.classifiers.trees.RandomForest",
+					"options" : "-P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1"
+				},
+				"loadClassifierFileName" : "",
+				"name" : "RandomForest",
+				"resetIncrementalClassifier" : false,
+				"updateIncrementalClassifier" : true
+			},
+			"connections" : {
+				"batchClassifier" : [
+					"ClassifierPerformanceEvaluator3",
+					"SerializedModelSaver22"
+				]
+			},
+			"coordinates" : "712,235"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ClassifierPerformanceEvaluator",
+			"properties" : {
+				"costMatrixString" : "",
+				"errorPlotPointSizeProportionalToMargin" : false,
+				"evaluateWithRespectToCosts" : false,
+				"evaluationMetricsToOutput" : "Correct,Incorrect,Kappa,Total cost,Average cost,KB relative,KB information,Correlation,Complexity 0,Complexity scheme,Complexity improvement,MAE,RMSE,RAE,RRSE,TP rate,FP rate,Precision,Recall,F-measure,MCC,ROC area,PRC area",
+				"name" : "ClassifierPerformanceEvaluator"
+			},
+			"connections" : {
+				"thresholdData" : [
+					"ModelPerformanceChart2"
+				],
+				"text" : [
+					"TextSaver2222"
+				]
+			},
+			"coordinates" : "861,126"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ClassifierPerformanceEvaluator",
+			"properties" : {
+				"costMatrixString" : "",
+				"errorPlotPointSizeProportionalToMargin" : false,
+				"evaluateWithRespectToCosts" : false,
+				"evaluationMetricsToOutput" : "Correct,Incorrect,Kappa,Total cost,Average cost,KB relative,KB information,Correlation,Complexity 0,Complexity scheme,Complexity improvement,MAE,RMSE,RAE,RRSE,TP rate,FP rate,Precision,Recall,F-measure,MCC,ROC area,PRC area",
+				"name" : "ClassifierPerformanceEvaluator2"
+			},
+			"connections" : {
+				"thresholdData" : [
+					"ModelPerformanceChart"
+				],
+				"text" : [
+					"TextSaver22222"
+				]
+			},
+			"coordinates" : "860,3"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ClassifierPerformanceEvaluator",
+			"properties" : {
+				"costMatrixString" : "",
+				"errorPlotPointSizeProportionalToMargin" : false,
+				"evaluateWithRespectToCosts" : false,
+				"evaluationMetricsToOutput" : "Correct,Incorrect,Kappa,Total cost,Average cost,KB relative,KB information,Correlation,Complexity 0,Complexity scheme,Complexity improvement,MAE,RMSE,RAE,RRSE,TP rate,FP rate,Precision,Recall,F-measure,MCC,ROC area,PRC area",
+				"name" : "ClassifierPerformanceEvaluator3"
+			},
+			"connections" : {
+				"thresholdData" : [
+					"ModelPerformanceChart3"
+				],
+				"text" : [
+					"TextSaver222"
+				]
+			},
+			"coordinates" : "850,248"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ImageSaver",
+			"properties" : {
+				"file" : "C:/Users/HiddenDimension/Desktop/ass2/history of universe/New Folder/ht",
+				"format" : {
+					"type" : "enumHelper",
+					"class" : "weka.knowledgeflow.steps.ImageSaver$ImageFormat",
+					"value" : "DEFAULT"
+				},
+				"name" : "ImageSaver"
+			},
+			"connections" : {
+			},
+			"coordinates" : "1344,215"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Classifier",
+			"properties" : {
+				"classifier" : {
+					"type" : "optionHandler",
+					"class" : "weka.classifiers.functions.SMO",
+					"options" : "-C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K \"weka.classifiers.functions.supportVector.PolyKernel -E 1.0 -C 250007\" -calibrator \"weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4\""
+				},
+				"loadClassifierFileName" : "",
+				"name" : "SMO",
+				"resetIncrementalClassifier" : false,
+				"updateIncrementalClassifier" : true
+			},
+			"connections" : {
+				"batchClassifier" : [
+					"ClassifierPerformanceEvaluator4",
+					"SerializedModelSaver222"
+				]
+			},
+			"coordinates" : "672,334"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Classifier",
+			"properties" : {
+				"classifier" : {
+					"type" : "optionHandler",
+					"class" : "weka.classifiers.meta.AdaBoostM1",
+					"options" : "-P 100 -S 1 -I 10 -W weka.classifiers.trees.HoeffdingTree -- -L 2 -S 1 -E 1.0E-7 -H 0.05 -M 0.01 -G 200.0 -N 0.0"
+				},
+				"loadClassifierFileName" : "",
+				"name" : "AdaBoostM1",
+				"resetIncrementalClassifier" : false,
+				"updateIncrementalClassifier" : true
+			},
+			"connections" : {
+				"batchClassifier" : [
+					"ClassifierPerformanceEvaluator5",
+					"SerializedModelSaver2222"
+				]
+			},
+			"coordinates" : "529,316"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.Classifier",
+			"properties" : {
+				"classifier" : {
+					"type" : "optionHandler",
+					"class" : "weka.classifiers.meta.Bagging",
+					"options" : "-P 100 -S 1 -num-slots 1 -I 10 -W weka.classifiers.trees.REPTree -- -M 2 -V 0.001 -N 3 -S 1 -L -1 -I 0.0"
+				},
+				"loadClassifierFileName" : "",
+				"name" : "Bagging",
+				"resetIncrementalClassifier" : false,
+				"updateIncrementalClassifier" : true
+			},
+			"connections" : {
+				"batchClassifier" : [
+					"ClassifierPerformanceEvaluator6",
+					"SerializedModelSaver22222"
+				]
+			},
+			"coordinates" : "398,301"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ClassifierPerformanceEvaluator",
+			"properties" : {
+				"costMatrixString" : "",
+				"errorPlotPointSizeProportionalToMargin" : false,
+				"evaluateWithRespectToCosts" : false,
+				"evaluationMetricsToOutput" : "Correct,Incorrect,Kappa,Total cost,Average cost,KB relative,KB information,Correlation,Complexity 0,Complexity scheme,Complexity improvement,MAE,RMSE,RAE,RRSE,TP rate,FP rate,Precision,Recall,F-measure,MCC,ROC area,PRC area",
+				"name" : "ClassifierPerformanceEvaluator4"
+			},
+			"connections" : {
+				"thresholdData" : [
+					"ModelPerformanceChart4"
+				],
+				"text" : [
+					"TextSaver22"
+				]
+			},
+			"coordinates" : "858,374"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ClassifierPerformanceEvaluator",
+			"properties" : {
+				"costMatrixString" : "",
+				"errorPlotPointSizeProportionalToMargin" : false,
+				"evaluateWithRespectToCosts" : false,
+				"evaluationMetricsToOutput" : "Correct,Incorrect,Kappa,Total cost,Average cost,KB relative,KB information,Correlation,Complexity 0,Complexity scheme,Complexity improvement,MAE,RMSE,RAE,RRSE,TP rate,FP rate,Precision,Recall,F-measure,MCC,ROC area,PRC area",
+				"name" : "ClassifierPerformanceEvaluator5"
+			},
+			"connections" : {
+				"thresholdData" : [
+					"ModelPerformanceChart52"
+				],
+				"text" : [
+					"TextSaver2"
+				]
+			},
+			"coordinates" : "685,501"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ClassifierPerformanceEvaluator",
+			"properties" : {
+				"costMatrixString" : "",
+				"errorPlotPointSizeProportionalToMargin" : false,
+				"evaluateWithRespectToCosts" : false,
+				"evaluationMetricsToOutput" : "Correct,Incorrect,Kappa,Total cost,Average cost,KB relative,KB information,Correlation,Complexity 0,Complexity scheme,Complexity improvement,MAE,RMSE,RAE,RRSE,TP rate,FP rate,Precision,Recall,F-measure,MCC,ROC area,PRC area",
+				"name" : "ClassifierPerformanceEvaluator6"
+			},
+			"connections" : {
+				"text" : [
+					"TextSaver"
+				],
+				"thresholdData" : [
+					"ModelPerformanceChart5"
+				]
+			},
+			"coordinates" : "487,545"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.TextViewer",
+			"properties" : {
+				"name" : "TextViewer2"
+			},
+			"connections" : {
+			},
+			"coordinates" : "1501,-71"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ImageSaver",
+			"properties" : {
+				"file" : "C:/Users/HiddenDimension/Desktop/ass2/history of universe/New Folder/nb",
+				"format" : {
+					"type" : "enumHelper",
+					"class" : "weka.knowledgeflow.steps.ImageSaver$ImageFormat",
+					"value" : "DEFAULT"
+				},
+				"name" : "ImageSaver2"
+			},
+			"connections" : {
+			},
+			"coordinates" : "1442,25"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ModelPerformanceChart",
+			"properties" : {
+				"name" : "ModelPerformanceChart",
+				"offscreenAdditionalOpts" : "",
+				"offscreenHeight" : "400",
+				"offscreenRendererName" : "Weka Chart Renderer",
+				"offscreenWidth" : "500",
+				"offscreenXAxis" : "",
+				"offscreenYAxis" : ""
+			},
+			"connections" : {
+				"image" : [
+					"ImageSaver2"
+				]
+			},
+			"coordinates" : "1241,14"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ModelPerformanceChart",
+			"properties" : {
+				"name" : "ModelPerformanceChart2",
+				"offscreenAdditionalOpts" : "",
+				"offscreenHeight" : "400",
+				"offscreenRendererName" : "Weka Chart Renderer",
+				"offscreenWidth" : "500",
+				"offscreenXAxis" : "",
+				"offscreenYAxis" : ""
+			},
+			"connections" : {
+				"image" : [
+					"ImageSaver"
+				]
+			},
+			"coordinates" : "1153,157"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ModelPerformanceChart",
+			"properties" : {
+				"name" : "ModelPerformanceChart3",
+				"offscreenAdditionalOpts" : "",
+				"offscreenHeight" : "400",
+				"offscreenRendererName" : "Weka Chart Renderer",
+				"offscreenWidth" : "500",
+				"offscreenXAxis" : "",
+				"offscreenYAxis" : ""
+			},
+			"connections" : {
+				"image" : [
+					"ImageSaver43"
+				]
+			},
+			"coordinates" : "1191,351"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ModelPerformanceChart",
+			"properties" : {
+				"name" : "ModelPerformanceChart4",
+				"offscreenAdditionalOpts" : "",
+				"offscreenHeight" : "400",
+				"offscreenRendererName" : "Weka Chart Renderer",
+				"offscreenWidth" : "500",
+				"offscreenXAxis" : "",
+				"offscreenYAxis" : ""
+			},
+			"connections" : {
+				"image" : [
+					"ImageSaver42"
+				]
+			},
+			"coordinates" : "1034,547"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ImageSaver",
+			"properties" : {
+				"file" : "C:/Users/HiddenDimension/Desktop/ass2/history of universe/New Folder/ada",
+				"format" : {
+					"type" : "enumHelper",
+					"class" : "weka.knowledgeflow.steps.ImageSaver$ImageFormat",
+					"value" : "DEFAULT"
+				},
+				"name" : "ImageSaver4"
+			},
+			"connections" : {
+			},
+			"coordinates" : "960,730"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ImageSaver",
+			"properties" : {
+				"file" : "C:/Users/HiddenDimension/Desktop/ass2/history of universe/New Folder/bagg",
+				"format" : {
+					"type" : "enumHelper",
+					"class" : "weka.knowledgeflow.steps.ImageSaver$ImageFormat",
+					"value" : "DEFAULT"
+				},
+				"name" : "ImageSaver5"
+			},
+			"connections" : {
+			},
+			"coordinates" : "581,777"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ModelPerformanceChart",
+			"properties" : {
+				"name" : "ModelPerformanceChart5",
+				"offscreenAdditionalOpts" : "",
+				"offscreenHeight" : "400",
+				"offscreenRendererName" : "Weka Chart Renderer",
+				"offscreenWidth" : "500",
+				"offscreenXAxis" : "",
+				"offscreenYAxis" : ""
+			},
+			"connections" : {
+				"image" : [
+					"ImageSaver5"
+				]
+			},
+			"coordinates" : "577,613"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ModelPerformanceChart",
+			"properties" : {
+				"name" : "ModelPerformanceChart52",
+				"offscreenAdditionalOpts" : "",
+				"offscreenHeight" : "400",
+				"offscreenRendererName" : "Weka Chart Renderer",
+				"offscreenWidth" : "500",
+				"offscreenXAxis" : "",
+				"offscreenYAxis" : ""
+			},
+			"connections" : {
+				"image" : [
+					"ImageSaver4"
+				]
+			},
+			"coordinates" : "774,617"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ImageSaver",
+			"properties" : {
+				"file" : "C:/Users/HiddenDimension/Desktop/ass2/history of universe/New Folder/smo",
+				"format" : {
+					"type" : "enumHelper",
+					"class" : "weka.knowledgeflow.steps.ImageSaver$ImageFormat",
+					"value" : "DEFAULT"
+				},
+				"name" : "ImageSaver42"
+			},
+			"connections" : {
+			},
+			"coordinates" : "1170,634"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.ImageSaver",
+			"properties" : {
+				"file" : "C:/Users/HiddenDimension/Desktop/ass2/history of universe/New Folder/rf",
+				"format" : {
+					"type" : "enumHelper",
+					"class" : "weka.knowledgeflow.steps.ImageSaver$ImageFormat",
+					"value" : "DEFAULT"
+				},
+				"name" : "ImageSaver43"
+			},
+			"connections" : {
+			},
+			"coordinates" : "1403,402"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.TextSaver",
+			"properties" : {
+				"append" : true,
+				"file" : "C:/Users/HiddenDimension/Desktop/ass2/history of universe/New Folder/bagg",
+				"name" : "TextSaver",
+				"writeTitleString" : false
+			},
+			"connections" : {
+			},
+			"coordinates" : "364,683"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.TextSaver",
+			"properties" : {
+				"append" : true,
+				"file" : "C:/Users/HiddenDimension/Desktop/ass2/history of universe/New Folder/ada",
+				"name" : "TextSaver2",
+				"writeTitleString" : false
+			},
+			"connections" : {
+			},
+			"coordinates" : "838,520"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.TextSaver",
+			"properties" : {
+				"append" : true,
+				"file" : "C:/Users/HiddenDimension/Desktop/ass2/history of universe/New Folder/smo",
+				"name" : "TextSaver22",
+				"writeTitleString" : false
+			},
+			"connections" : {
+			},
+			"coordinates" : "1017,390"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.TextSaver",
+			"properties" : {
+				"append" : true,
+				"file" : "C:/Users/HiddenDimension/Desktop/ass2/history of universe/New Folder/rf",
+				"name" : "TextSaver222",
+				"writeTitleString" : false
+			},
+			"connections" : {
+			},
+			"coordinates" : "1107,248"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.TextSaver",
+			"properties" : {
+				"append" : true,
+				"file" : "C:/Users/HiddenDimension/Desktop/ass2/history of universe/New Folder/ht",
+				"name" : "TextSaver2222",
+				"writeTitleString" : false
+			},
+			"connections" : {
+			},
+			"coordinates" : "1068,91"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.TextSaver",
+			"properties" : {
+				"append" : true,
+				"file" : "C:/Users/HiddenDimension/Desktop/ass2/history of universe/New Folder/nb",
+				"name" : "TextSaver22222",
+				"writeTitleString" : false
+			},
+			"connections" : {
+			},
+			"coordinates" : "1115,-13"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.SerializedModelSaver",
+			"properties" : {
+				"filenamePrefix" : "mnb",
+				"includeRelationNameInFilename" : false,
+				"incrementalSaveSchedule" : 0,
+				"name" : "SerializedModelSaver",
+				"outputDirectory" : "C:/Users/HiddenDimension/Desktop/ass2/history of universe/New Folder"
+			},
+			"connections" : {
+			},
+			"coordinates" : "782,57"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.SerializedModelSaver",
+			"properties" : {
+				"filenamePrefix" : "mht",
+				"includeRelationNameInFilename" : false,
+				"incrementalSaveSchedule" : 0,
+				"name" : "SerializedModelSaver2",
+				"outputDirectory" : "C:/Users/HiddenDimension/Desktop/ass2/history of universe/New Folder"
+			},
+			"connections" : {
+			},
+			"coordinates" : "787,158"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.SerializedModelSaver",
+			"properties" : {
+				"filenamePrefix" : "mrf",
+				"includeRelationNameInFilename" : false,
+				"incrementalSaveSchedule" : 0,
+				"name" : "SerializedModelSaver22",
+				"outputDirectory" : "C:/Users/HiddenDimension/Desktop/ass2/history of universe/New Folder"
+			},
+			"connections" : {
+			},
+			"coordinates" : "789,299"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.SerializedModelSaver",
+			"properties" : {
+				"filenamePrefix" : "msmo",
+				"includeRelationNameInFilename" : false,
+				"incrementalSaveSchedule" : 0,
+				"name" : "SerializedModelSaver222",
+				"outputDirectory" : "C:/Users/HiddenDimension/Desktop/ass2/history of universe/New Folder"
+			},
+			"connections" : {
+			},
+			"coordinates" : "756,415"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.SerializedModelSaver",
+			"properties" : {
+				"filenamePrefix" : "mada",
+				"includeRelationNameInFilename" : false,
+				"incrementalSaveSchedule" : 0,
+				"name" : "SerializedModelSaver2222",
+				"outputDirectory" : "C:/Users/HiddenDimension/Desktop/ass2/history of universe/New Folder"
+			},
+			"connections" : {
+			},
+			"coordinates" : "567,461"
+		},
+		{
+			"class" : "weka.knowledgeflow.steps.SerializedModelSaver",
+			"properties" : {
+				"filenamePrefix" : "mbag",
+				"includeRelationNameInFilename" : false,
+				"incrementalSaveSchedule" : 0,
+				"name" : "SerializedModelSaver22222",
+				"outputDirectory" : "C:/Users/HiddenDimension/Desktop/ass2/history of universe/New Folder"
+			},
+			"connections" : {
+			},
+			"coordinates" : "365,440"
+		}
+	]
+}

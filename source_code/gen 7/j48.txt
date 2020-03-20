@@ -1,0 +1,73 @@
+A[ACGU]{1}A <= 0.216
+|   CC[ACGU]{8}CU <= 0
+|   |   U[ACGU]{9}UU <= 0.059
+|   |   |   G[ACGU]{8}U <= 0
+|   |   |   |   UC[ACGU]{3}CA <= 0: negative (8.0)
+|   |   |   |   UC[ACGU]{3}CA > 0: positive (2.0)
+|   |   |   G[ACGU]{8}U > 0
+|   |   |   |   AC[ACGU]{5}AG <= 0
+|   |   |   |   |   A[ACGU]{3}AG <= 0.039
+|   |   |   |   |   |   AC[ACGU]{6}AA <= 0
+|   |   |   |   |   |   |   G[ACGU]{2}GU <= 0.039
+|   |   |   |   |   |   |   |   UA[ACGU]{8}UU <= 0: positive (79.0/1.0)
+|   |   |   |   |   |   |   |   UA[ACGU]{8}UU > 0
+|   |   |   |   |   |   |   |   |   AA[ACGU]{1}A <= 0: negative (2.0)
+|   |   |   |   |   |   |   |   |   AA[ACGU]{1}A > 0: positive (11.0)
+|   |   |   |   |   |   |   G[ACGU]{2}GU > 0.039
+|   |   |   |   |   |   |   |   AC[ACGU]{3}UG <= 0: positive (6.0/1.0)
+|   |   |   |   |   |   |   |   AC[ACGU]{3}UG > 0: negative (2.0)
+|   |   |   |   |   |   AC[ACGU]{6}AA > 0
+|   |   |   |   |   |   |   AA[ACGU]{1}A <= 0.02: negative (6.0/1.0)
+|   |   |   |   |   |   |   AA[ACGU]{1}A > 0.02: positive (9.0)
+|   |   |   |   |   A[ACGU]{3}AG > 0.039
+|   |   |   |   |   |   AA[ACGU]{4}AG <= 0: negative (4.0)
+|   |   |   |   |   |   AA[ACGU]{4}AG > 0: positive (4.0)
+|   |   |   |   AC[ACGU]{5}AG > 0
+|   |   |   |   |   UCAG <= 0
+|   |   |   |   |   |   AG[ACGU]{1}UA <= 0: negative (9.0/1.0)
+|   |   |   |   |   |   AG[ACGU]{1}UA > 0: positive (2.0)
+|   |   |   |   |   UCAG > 0: positive (3.0)
+|   |   U[ACGU]{9}UU > 0.059: negative (8.0/1.0)
+|   CC[ACGU]{8}CU > 0
+|   |   UC[ACGU]{10}CA <= 0: negative (9.0)
+|   |   UC[ACGU]{10}CA > 0: positive (2.0)
+A[ACGU]{1}A > 0.216
+|   GU[ACGU]{2}AU <= 0: negative (70.0/1.0)
+|   GU[ACGU]{2}AU > 0
+|   |   AC[ACGU]{5}AA <= 0: positive (5.0)
+|   |   AC[ACGU]{5}AA > 0: negative (3.0)
+
+
+
+Number of Leaves  : 	18
+
+Size of the tree : 	35
+
+
+Time taken to build model: 0.18 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         190               77.8689 %
+Incorrectly Classified Instances        54               22.1311 %
+Kappa statistic                          0.5573
+Mean absolute error                      0.232 
+Root mean squared error                  0.4562
+Relative absolute error                 46.4277 %
+Root relative squared error             91.251  %
+Total Number of Instances              244     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.776    0.218    0.789      0.776    0.782      0.557    0.776     0.757     positive
+                 0.782    0.224    0.769      0.782    0.775      0.557    0.776     0.692     negative
+Weighted Avg.    0.779    0.221    0.779      0.779    0.779      0.557    0.776     0.725     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 97 28 |  a = positive
+ 26 93 |  b = negative
+

@@ -1,0 +1,112 @@
+=== Evaluation result ===
+
+Scheme: AdaBoostM1
+Options: -P 100 -S 1 -I 10 -W weka.classifiers.trees.HoeffdingTree -- -L 2 -S 1 -E 1.0E-7 -H 0.05 -M 0.01 -G 200.0 -N 0.0
+Relation: dataset2
+
+
+Correctly Classified Instances         193               79.0984 %
+Incorrectly Classified Instances        51               20.9016 %
+Kappa statistic                          0.5815
+Mean absolute error                      0.2365
+Root mean squared error                  0.4203
+Relative absolute error                 47.3193 %
+Root relative squared error             84.0706 %
+Total Number of Instances              244     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.808    0.227    0.789      0.808    0.798      0.582    0.835     0.821     positive
+                 0.773    0.192    0.793      0.773    0.783      0.582    0.835     0.803     negative
+Weighted Avg.    0.791    0.210    0.791      0.791    0.791      0.582    0.835     0.812     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 101  24 |   a = positive
+  27  92 |   b = negative
+=== Evaluation result ===
+
+Scheme: AdaBoostM1
+Options: -P 100 -S 1 -I 10 -W weka.classifiers.trees.HoeffdingTree -- -L 2 -S 1 -E 1.0E-7 -H 0.05 -M 0.01 -G 200.0 -N 0.0
+Relation: dataset2
+
+
+Correctly Classified Instances         193               79.0984 %
+Incorrectly Classified Instances        51               20.9016 %
+Kappa statistic                          0.5815
+Mean absolute error                      0.2365
+Root mean squared error                  0.4203
+Relative absolute error                 47.3193 %
+Root relative squared error             84.0706 %
+Total Number of Instances              244     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.808    0.227    0.789      0.808    0.798      0.582    0.835     0.821     positive
+                 0.773    0.192    0.793      0.773    0.783      0.582    0.835     0.803     negative
+Weighted Avg.    0.791    0.210    0.791      0.791    0.791      0.582    0.835     0.812     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 101  24 |   a = positive
+  27  92 |   b = negative
+=== Evaluation result ===
+
+Scheme: AdaBoostM1
+Options: -P 100 -S 1 -I 10 -W weka.classifiers.trees.HoeffdingTree -- -L 2 -S 1 -E 1.0E-7 -H 0.05 -M 0.01 -G 200.0 -N 0.0
+Relation: dataset2
+
+
+Correctly Classified Instances         192               78.6885 %
+Incorrectly Classified Instances        52               21.3115 %
+Kappa statistic                          0.5728
+Mean absolute error                      0.2228
+Root mean squared error                  0.4156
+Relative absolute error                 44.5793 %
+Root relative squared error             83.1395 %
+Total Number of Instances              244     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.824    0.252    0.774      0.824    0.798      0.574    0.848     0.816     positive
+                 0.748    0.176    0.802      0.748    0.774      0.574    0.848     0.839     negative
+Weighted Avg.    0.787    0.215    0.788      0.787    0.786      0.574    0.848     0.827     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 103  22 |   a = positive
+  30  89 |   b = negative
+=== Evaluation result ===
+
+Scheme: AdaBoostM1
+Options: -P 100 -S 1 -I 10 -W weka.classifiers.trees.HoeffdingTree -- -L 2 -S 1 -E 1.0E-7 -H 0.05 -M 0.01 -G 200.0 -N 0.0
+Relation: dataset2
+
+
+Correctly Classified Instances         191               78.2787 %
+Incorrectly Classified Instances        53               21.7213 %
+Kappa statistic                          0.5622
+Mean absolute error                      0.2235
+Root mean squared error                  0.4475
+Relative absolute error                 44.7188 %
+Root relative squared error             89.518  %
+Total Number of Instances              244     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.928    0.370    0.725      0.928    0.814      0.587    0.833     0.770     positive
+                 0.630    0.072    0.893      0.630    0.739      0.587    0.833     0.866     negative
+Weighted Avg.    0.783    0.225    0.807      0.783    0.777      0.587    0.833     0.817     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 116   9 |   a = positive
+  44  75 |   b = negative

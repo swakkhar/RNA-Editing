@@ -1,0 +1,56 @@
+=== Evaluation result ===
+
+Scheme: SMO
+Options: -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -E 1.0 -C 250007" -calibrator "weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4"
+Relation: dataset2
+
+
+Correctly Classified Instances         184               75.4098 %
+Incorrectly Classified Instances        60               24.5902 %
+Kappa statistic                          0.5079
+Mean absolute error                      0.2459
+Root mean squared error                  0.4959
+Relative absolute error                 49.2058 %
+Root relative squared error             99.1986 %
+Total Number of Instances              244     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.760    0.252    0.760      0.760    0.760      0.508    0.754     0.701     positive
+                 0.748    0.240    0.748      0.748    0.748      0.508    0.754     0.682     negative
+Weighted Avg.    0.754    0.246    0.754      0.754    0.754      0.508    0.754     0.692     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 95 30 |  a = positive
+ 30 89 |  b = negative
+=== Evaluation result ===
+
+Scheme: SMO
+Options: -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -E 1.0 -C 250007" -calibrator "weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4"
+Relation: dataset2
+
+
+Correctly Classified Instances         184               75.4098 %
+Incorrectly Classified Instances        60               24.5902 %
+Kappa statistic                          0.5079
+Mean absolute error                      0.2459
+Root mean squared error                  0.4959
+Relative absolute error                 49.2058 %
+Root relative squared error             99.1986 %
+Total Number of Instances              244     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.760    0.252    0.760      0.760    0.760      0.508    0.754     0.701     positive
+                 0.748    0.240    0.748      0.748    0.748      0.508    0.754     0.682     negative
+Weighted Avg.    0.754    0.246    0.754      0.754    0.754      0.508    0.754     0.692     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 95 30 |  a = positive
+ 30 89 |  b = negative

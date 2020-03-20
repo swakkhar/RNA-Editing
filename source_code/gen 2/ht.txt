@@ -1,0 +1,84 @@
+=== Evaluation result ===
+
+Scheme: HoeffdingTree
+Options: -L 2 -S 1 -E 1.0E-7 -H 0.05 -M 0.01 -G 200.0 -N 0.0
+Relation: dataset2
+
+
+Correctly Classified Instances         185               75.8197 %
+Incorrectly Classified Instances        59               24.1803 %
+Kappa statistic                          0.5146
+Mean absolute error                      0.2382
+Root mean squared error                  0.4856
+Relative absolute error                 47.6674 %
+Root relative squared error             97.1498 %
+Total Number of Instances              244     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.824    0.311    0.736      0.824    0.777      0.519    0.804     0.740     positive
+                 0.689    0.176    0.788      0.689    0.735      0.519    0.801     0.803     negative
+Weighted Avg.    0.758    0.245    0.761      0.758    0.757      0.519    0.803     0.771     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 103  22 |   a = positive
+  37  82 |   b = negative
+=== Evaluation result ===
+
+Scheme: HoeffdingTree
+Options: -L 2 -S 1 -E 1.0E-7 -H 0.05 -M 0.01 -G 200.0 -N 0.0
+Relation: dataset2
+
+
+Correctly Classified Instances         185               75.8197 %
+Incorrectly Classified Instances        59               24.1803 %
+Kappa statistic                          0.5146
+Mean absolute error                      0.2382
+Root mean squared error                  0.4856
+Relative absolute error                 47.6674 %
+Root relative squared error             97.1498 %
+Total Number of Instances              244     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.824    0.311    0.736      0.824    0.777      0.519    0.804     0.740     positive
+                 0.689    0.176    0.788      0.689    0.735      0.519    0.801     0.803     negative
+Weighted Avg.    0.758    0.245    0.761      0.758    0.757      0.519    0.803     0.771     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 103  22 |   a = positive
+  37  82 |   b = negative
+=== Evaluation result ===
+
+Scheme: HoeffdingTree
+Options: -L 2 -S 1 -E 1.0E-7 -H 0.05 -M 0.01 -G 200.0 -N 0.0
+Relation: dataset2
+
+
+Correctly Classified Instances         186               76.2295 %
+Incorrectly Classified Instances        58               23.7705 %
+Kappa statistic                          0.5228
+Mean absolute error                      0.2365
+Root mean squared error                  0.4852
+Relative absolute error                 47.3324 %
+Root relative squared error             97.0694 %
+Total Number of Instances              244     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.832    0.311    0.738      0.832    0.782      0.527    0.812     0.747     positive
+                 0.689    0.168    0.796      0.689    0.739      0.527    0.791     0.781     negative
+Weighted Avg.    0.762    0.241    0.766      0.762    0.761      0.527    0.801     0.764     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 104  21 |   a = positive
+  37  82 |   b = negative

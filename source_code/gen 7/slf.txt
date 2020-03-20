@@ -1,0 +1,96 @@
+[CCGG] * 38.43 +
+[CGCA] * 20.95 +
+[UGAA] * 17.61 +
+[AU[ACGU]{2}GC] * 23.18 +
+[GC[ACGU]{2}GU] * 29.24 +
+[GU[ACGU]{2}AU] * 17.72 +
+[A[ACGU]{3}AG] * -6.17 +
+[AG[ACGU]{3}AG] * -20.41 +
+[UC[ACGU]{3}C] * 10.67 +
+[UC[ACGU]{3}AU] * 23.05 +
+[UU[ACGU]{3}GU] * 29.19 +
+[CG[ACGU]{4}G] * 14.42 +
+[GA[ACGU]{4}UA] * -19.85 +
+[AA[ACGU]{5}GA] * -17.81 +
+[AC[ACGU]{5}AG] * -31.84 +
+[GG[ACGU]{5}A] * 13.38 +
+[AC[ACGU]{6}A] * -9.51 +
+[UC[ACGU]{6}AC] * 27.04 +
+[G[ACGU]{7}AU] * 9.41 +
+[CG[ACGU]{7}GU] * 35.38 +
+[U[ACGU]{8}GG] * 18.12 +
+[AA[ACGU]{8}CA] * -20.07 +      //
+[CC[ACGU]{8}CU] * -37.6 +
+[UA[ACGU]{8}UU] * -21.76 +
+[A[ACGU]{9}A] * -5.02 +
+[C[ACGU]{9}CU] * -10.03 +       //
+[AA[ACGU]{9}GU] * 22.55 +
+[A[ACGU]{10}UC] * 19.26 +
+[C[ACGU]{10}GA] * -15.83 +      //
+[AU[ACGU]{10}CU] * 33.73 +
+[CU[ACGU]{10}AA] * -25.15 +
+[UC[ACGU]{10}CA] * 26.44
+
+Class negative :
+-0.11 + 
+[CCGG] * -38.43 +
+[CGCA] * -20.95 +
+[UGAA] * -17.61 +
+[AU[ACGU]{2}GC] * -23.18 +
+[GC[ACGU]{2}GU] * -29.24 +
+[GU[ACGU]{2}AU] * -17.72 +
+[A[ACGU]{3}AG] * 6.17 +
+[AG[ACGU]{3}AG] * 20.41 +
+[UC[ACGU]{3}C] * -10.67 +
+[UC[ACGU]{3}AU] * -23.05 +
+[UU[ACGU]{3}GU] * -29.19 +
+[CG[ACGU]{4}G] * -14.42 +
+[GA[ACGU]{4}UA] * 19.85 +
+[AA[ACGU]{5}GA] * 17.81 +
+[AC[ACGU]{5}AG] * 31.84 +
+[GG[ACGU]{5}A] * -13.38 +
+[AC[ACGU]{6}A] * 9.51 +
+[UC[ACGU]{6}AC] * -27.04 +
+[G[ACGU]{7}AU] * -9.41 +
+[CG[ACGU]{7}GU] * -35.38 +
+[U[ACGU]{8}GG] * -18.12 +
+[AA[ACGU]{8}CA] * 20.07 +
+[CC[ACGU]{8}CU] * 37.6 +
+[UA[ACGU]{8}UU] * 21.76 +
+[A[ACGU]{9}A] * 5.02 +
+[C[ACGU]{9}CU] * 10.03 +
+[AA[ACGU]{9}GU] * -22.55 +
+[A[ACGU]{10}UC] * -19.26 +
+[C[ACGU]{10}GA] * 15.83 +
+[AU[ACGU]{10}CU] * -33.73 +
+[CU[ACGU]{10}AA] * 25.15 +
+[UC[ACGU]{10}CA] * -26.44
+
+
+Time taken to build model: 0.64 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         205               84.0164 %
+Incorrectly Classified Instances        39               15.9836 %
+Kappa statistic                          0.6802
+Mean absolute error                      0.1941
+Root mean squared error                  0.3487
+Relative absolute error                 38.8404 %
+Root relative squared error             69.7618 %
+Total Number of Instances              244     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.840    0.160    0.847      0.840    0.843      0.680    0.909     0.893     positive
+                 0.840    0.160    0.833      0.840    0.837      0.680    0.909     0.921     negative
+Weighted Avg.    0.840    0.160    0.840      0.840    0.840      0.680    0.909     0.906     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 105  20 |   a = positive
+  19 100 |   b = negative
+

@@ -1,0 +1,135 @@
+=== Evaluation result ===
+
+Scheme: NaiveBayes
+Relation: dataset2
+
+
+Correctly Classified Instances         185               75.8197 %
+Incorrectly Classified Instances        59               24.1803 %
+Kappa statistic                          0.5144
+Mean absolute error                      0.2406
+Root mean squared error                  0.4873
+Relative absolute error                 48.1431 %
+Root relative squared error             97.4782 %
+Total Number of Instances              244     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.832    0.319    0.732      0.832    0.779      0.520    0.795     0.735     positive
+                 0.681    0.168    0.794      0.681    0.733      0.520    0.793     0.814     negative
+Weighted Avg.    0.758    0.246    0.762      0.758    0.757      0.520    0.794     0.773     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 104  21 |   a = positive
+  38  81 |   b = negative
+=== Evaluation result ===
+
+Scheme: NaiveBayes
+Relation: dataset2
+
+
+Correctly Classified Instances         185               75.8197 %
+Incorrectly Classified Instances        59               24.1803 %
+Kappa statistic                          0.5144
+Mean absolute error                      0.2406
+Root mean squared error                  0.4873
+Relative absolute error                 48.1431 %
+Root relative squared error             97.4782 %
+Total Number of Instances              244     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.832    0.319    0.732      0.832    0.779      0.520    0.795     0.735     positive
+                 0.681    0.168    0.794      0.681    0.733      0.520    0.793     0.814     negative
+Weighted Avg.    0.758    0.246    0.762      0.758    0.757      0.520    0.794     0.773     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 104  21 |   a = positive
+  38  81 |   b = negative
+=== Evaluation result ===
+
+Scheme: NaiveBayes
+Relation: dataset2
+
+
+Correctly Classified Instances         186               76.2295 %
+Incorrectly Classified Instances        58               23.7705 %
+Kappa statistic                          0.5228
+Mean absolute error                      0.2394
+Root mean squared error                  0.4873
+Relative absolute error                 47.903  %
+Root relative squared error             97.49   %
+Total Number of Instances              244     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.832    0.311    0.738      0.832    0.782      0.527    0.806     0.741     positive
+                 0.689    0.168    0.796      0.689    0.739      0.527    0.784     0.789     negative
+Weighted Avg.    0.762    0.241    0.766      0.762    0.761      0.527    0.795     0.765     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 104  21 |   a = positive
+  37  82 |   b = negative
+=== Evaluation result ===
+
+Scheme: NaiveBayes
+Relation: dataset2
+
+
+Correctly Classified Instances         193               79.0984 %
+Incorrectly Classified Instances        51               20.9016 %
+Kappa statistic                          0.5799
+Mean absolute error                      0.209 
+Root mean squared error                  0.4572
+Relative absolute error                 41.8282 %
+Root relative squared error             91.4566 %
+Total Number of Instances              244     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.880    0.303    0.753      0.880    0.812      0.589    0.815     0.746     positive
+                 0.697    0.120    0.847      0.697    0.765      0.589    0.798     0.778     negative
+Weighted Avg.    0.791    0.214    0.799      0.791    0.789      0.589    0.807     0.762     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 110  15 |   a = positive
+  36  83 |   b = negative
+=== Evaluation result ===
+
+Scheme: NaiveBayes
+Relation: dataset2
+
+
+Correctly Classified Instances         193               79.0984 %
+Incorrectly Classified Instances        51               20.9016 %
+Kappa statistic                          0.5799
+Mean absolute error                      0.209 
+Root mean squared error                  0.4572
+Relative absolute error                 41.8273 %
+Root relative squared error             91.4566 %
+Total Number of Instances              244     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.880    0.303    0.753      0.880    0.812      0.589    0.815     0.746     positive
+                 0.697    0.120    0.847      0.697    0.765      0.589    0.798     0.778     negative
+Weighted Avg.    0.791    0.214    0.799      0.791    0.789      0.589    0.807     0.762     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 110  15 |   a = positive
+  36  83 |   b = negative

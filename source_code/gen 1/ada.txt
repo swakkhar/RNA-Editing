@@ -1,0 +1,56 @@
+=== Evaluation result ===
+
+Scheme: AdaBoostM1
+Options: -P 100 -S 1 -I 10 -W weka.classifiers.trees.HoeffdingTree -- -L 2 -S 1 -E 1.0E-7 -H 0.05 -M 0.01 -G 200.0 -N 0.0
+Relation: dataset2
+
+
+Correctly Classified Instances         193               79.0984 %
+Incorrectly Classified Instances        51               20.9016 %
+Kappa statistic                          0.5815
+Mean absolute error                      0.2365
+Root mean squared error                  0.4203
+Relative absolute error                 47.3193 %
+Root relative squared error             84.0706 %
+Total Number of Instances              244     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.808    0.227    0.789      0.808    0.798      0.582    0.835     0.821     positive
+                 0.773    0.192    0.793      0.773    0.783      0.582    0.835     0.803     negative
+Weighted Avg.    0.791    0.210    0.791      0.791    0.791      0.582    0.835     0.812     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 101  24 |   a = positive
+  27  92 |   b = negative
+=== Evaluation result ===
+
+Scheme: AdaBoostM1
+Options: -P 100 -S 1 -I 10 -W weka.classifiers.trees.HoeffdingTree -- -L 2 -S 1 -E 1.0E-7 -H 0.05 -M 0.01 -G 200.0 -N 0.0
+Relation: dataset2
+
+
+Correctly Classified Instances         193               79.0984 %
+Incorrectly Classified Instances        51               20.9016 %
+Kappa statistic                          0.5815
+Mean absolute error                      0.2365
+Root mean squared error                  0.4203
+Relative absolute error                 47.3193 %
+Root relative squared error             84.0706 %
+Total Number of Instances              244     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.808    0.227    0.789      0.808    0.798      0.582    0.835     0.821     positive
+                 0.773    0.192    0.793      0.773    0.783      0.582    0.835     0.803     negative
+Weighted Avg.    0.791    0.210    0.791      0.791    0.791      0.582    0.835     0.812     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 101  24 |   a = positive
+  27  92 |   b = negative
