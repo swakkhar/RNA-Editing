@@ -8,3 +8,6 @@ This repository contains datasets for the paper titled "Incremental Decision Tre
 4. Benchmark Dataset.txt - Benchmark Dataset
 5. Independent Test Set.txt - Independent Test Set
 6. NegativeDataset.txt - Generated Negative Strings
+
+# Source Codes
+This folder contains all the workflow knowledge files needed in Weka 3
